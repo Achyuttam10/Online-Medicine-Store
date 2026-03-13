@@ -1,0 +1,28 @@
+<div class="medicine-list-container">
+  <h2>Available Medicines</h2>
+  
+  @if (loading()) {
+    <p>Loading medicines...</p>
+  }
+  
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <div class="grid">
+    @for (medicine of medicines(); track medicine.MedicineID) {
+      <div class="medicine-card">
+        <h3>{{ medicine.Name }}</h3>
+        <p>Price: \${{ medicine.Price | number:'1.2-2' }}</p>
+        <p>Stock: {{ medicine.StockQuantity }}</p>
+        <button (click)="addToCart(medicine)" [disabled]="medicine.StockQuantity === 0">
+          Add to Cart
+        </button>
+      </div>
+    } @empty {
+      @if (!loading() && !error()) {
+        <p>No medicines found.</p>
+      }
+    }
+  </div>
+</div>

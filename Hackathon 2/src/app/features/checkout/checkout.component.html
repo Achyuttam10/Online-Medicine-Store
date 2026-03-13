@@ -1,0 +1,177 @@
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="card shadow-sm border-0">
+      <div class="card-body p-5">
+        
+        @if (submitSuccess()) {
+          <div class="text-center py-5">
+            <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+            <h2 class="mt-4 fw-bold">Order Placed Successfully!</h2>
+            <p class="text-muted fs-5">Thank you for your purchase. Your order is being processed.</p>
+            <button class="btn btn-primary mt-3 px-4 py-2" (click)="submitSuccess.set(false)">Return to Shop</button>
+          </div>
+        } @else {
+
+          <!-- Progress Indicator -->
+          <div class="position-relative m-4">
+            <div class="progress" style="height: 2px;">
+              <div class="progress-bar bg-primary" role="progressbar" 
+                   [style.width]="(currentStep() - 1) * 50 + '%'"></div>
+            </div>
+            <button class="position-absolute top-0 start-0 translate-middle btn btn-sm rounded-pill"
+                    [ngClass]="currentStep() >= 1 ? 'btn-primary' : 'btn-secondary'"
+                    style="width: 2rem; height:2rem;">1</button>
+            <button class="position-absolute top-0 start-50 translate-middle btn btn-sm rounded-pill"
+                    [ngClass]="currentStep() >= 2 ? 'btn-primary' : 'btn-secondary'"
+                    style="width: 2rem; height:2rem;">2</button>
+            <button class="position-absolute top-0 start-100 translate-middle btn btn-sm rounded-pill"
+                    [ngClass]="currentStep() >= 3 ? 'btn-primary' : 'btn-secondary'"
+                    style="width: 2rem; height:2rem;">3</button>
+          </div>
+
+          <h3 class="mb-4 text-center fw-bold">
+            {{ currentStep() === 1 ? 'Shopping Cart' : currentStep() === 2 ? 'Shipping Details' : 'Payment Summary' }}
+          </h3>
+
+          <!-- STEP 1: CART -->
+          @if (currentStep() === 1) {
+            @if (cartItems().length === 0) {
+              <div class="text-center py-5">
+                <i class="bi bi-cart-x fs-1 text-muted"></i>
+                <p class="mt-3 text-muted fs-5">Your cart is completely empty.</p>
+              </div>
+            } @else {
+              <div class="table-responsive">
+                <table class="table align-middle">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Product</th>
+                      <th>Unit Price</th>
+                      <th class="text-center">Quantity</th>
+                      <th class="text-end">Subtotal</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    @for (item of cartItems(); track item.medicine.medicineId) {
+                      <tr>
+                        <td>
+                          <h6 class="mb-0 fw-bold text-dark">{{ item.medicine.name }}</h6>
+                        </td>
+                        <td>{{ item.medicine.price | currency:'INR' }}</td>
+                        <td class="text-center">
+                          <div class="btn-group btn-group-sm" role="group">
+                            <button class="btn btn-outline-secondary" (click)="updateQuantity(item.medicine.medicineId, item.quantity, -1)">
+                              <i class="bi bi-dash"></i>
+                            </button>
+                            <span class="btn btn-outline-secondary disabled border-start-0 border-end-0 text-dark">
+                              {{ item.quantity }}
+                            </span>
+                            <button class="btn btn-outline-secondary" (click)="updateQuantity(item.medicine.medicineId, item.quantity, 1)">
+                              <i class="bi bi-plus"></i>
+                            </button>
+                          </div>
+                        </td>
+                        <td class="text-end fw-bold">
+                          {{ item.medicine.price * item.quantity | currency:'INR' }}
+                        </td>
+                        <td class="text-end">
+                          <button class="btn btn-link text-danger p-0" (click)="removeItem(item.medicine.medicineId)">
+                            <i class="bi bi-trash fs-5"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    }
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3" class="text-end fs-5"><strong>Total:</strong></td>
+                      <td colspan="2" class="text-end fs-5 text-primary fw-bold">
+                        {{ totalPrice() | currency:'INR' }}
+                      </td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+              <div class="d-flex justify-content-end mt-4">
+                <button class="btn btn-primary px-4 py-2" (click)="nextStep()">
+                  Proceed to Checkout <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            }
+          }
+
+          <!-- STEP 2: SHIPPING FORM -->
+          @if (currentStep() === 2) {
+            <form [formGroup]="checkoutForm" (ngSubmit)="nextStep()">
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label fw-bold">Full Name</label>
+                  <input type="text" class="form-control bg-light" formControlName="customerName" placeholder="John Doe">
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-bold">Street Address</label>
+                  <input type="text" class="form-control bg-light" formControlName="shippingAddress" placeholder="123 Main St">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">City</label>
+                  <input type="text" class="form-control bg-light" formControlName="city" placeholder="New York">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold">Zip Code</label>
+                  <input type="text" class="form-control bg-light" formControlName="zipCode" placeholder="10001">
+                </div>
+              </div>
+              <div class="d-flex justify-content-between mt-5">
+                <button type="button" class="btn btn-outline-secondary px-4" (click)="prevStep()">Back</button>
+                <button type="submit" class="btn btn-primary px-4" [disabled]="checkoutForm.invalid">
+                  Continue to Payment <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+              </div>
+            </form>
+          }
+
+          <!-- STEP 3: PAYMENT SUMMARY -->
+          @if (currentStep() === 3) {
+            <div class="bg-light p-4 rounded mb-4 border">
+              <h5 class="fw-bold mb-3 border-bottom pb-2">Order Summary</h5>
+              <div class="d-flex justify-content-between mb-2">
+                <span class="text-muted">Subtotal ({{ cartItems().length }} items)</span>
+                <span class="fw-bold">{{ totalPrice() | currency:'INR' }}</span>
+              </div>
+              <div class="d-flex justify-content-between mb-3 border-bottom pb-3">
+                <span class="text-muted">Shipping</span>
+                <span class="text-success fw-bold">Free</span>
+              </div>
+              <div class="d-flex justify-content-between fs-4 text-primary fw-bold">
+                <span>Total</span>
+                <span>{{ totalPrice() | currency:'INR' }}</span>
+              </div>
+            </div>
+
+            <div class="bg-light p-4 rounded border mb-4">
+              <h5 class="fw-bold mb-3 border-bottom pb-2">Deliver To</h5>
+              <p class="mb-1 fw-bold">{{ checkoutForm.value.customerName }}</p>
+              <p class="mb-0 text-muted">
+                {{ checkoutForm.value.shippingAddress }}<br>
+                {{ checkoutForm.value.city }}, {{ checkoutForm.value.zipCode }}
+              </p>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+              <button type="button" class="btn btn-outline-secondary px-4" (click)="prevStep()" [disabled]="isSubmitting()">Back</button>
+              <button type="button" class="btn btn-success px-5 py-2 fw-bold" (click)="placeOrder()" [disabled]="isSubmitting()">
+                @if (isSubmitting()) {
+                  <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Processing...
+                } @else {
+                  <i class="bi bi-credit-card me-2"></i> Confirm Pay
+                }
+              </button>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>

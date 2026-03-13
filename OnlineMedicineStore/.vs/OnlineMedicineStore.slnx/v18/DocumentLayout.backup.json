@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\medicinecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|c:\\users\\achyu\\source\\repos\\onlinemedicinestore\\onlinemedicinestore\\models\\onlinemedicinestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9466CD22-391D-4D20-AA94-867D3BFD3596}|OnlineMedicineStore\\OnlineMedicineStore.csproj|solutionrelative:onlinemedicinestore\\models\\onlinemedicinestorecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAowFAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:24:24.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\CartController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CartController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAA1wCEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:24:06.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\OrderController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowBQAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:23:43.768Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:23:16.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowCAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:22:33.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Program.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Program.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Program.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACQAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:07:07.37Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MedicineController.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\MedicineController.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Controllers\\MedicineController.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Controllers\\MedicineController.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Controllers\\MedicineController.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAowEUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T08:21:39.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "OnlineMedicineStoreContext.cs",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Models\\OnlineMedicineStoreContext.cs",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\Models\\OnlineMedicineStoreContext.cs",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\Models\\OnlineMedicineStoreContext.cs",
+              "RelativeToolTip": "OnlineMedicineStore\\Models\\OnlineMedicineStoreContext.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAUwCQAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:56:00.881Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\appsettings.json",
+              "RelativeDocumentMoniker": "OnlineMedicineStore\\appsettings.json",
+              "ToolTip": "C:\\Users\\achyu\\source\\repos\\OnlineMedicineStore\\OnlineMedicineStore\\appsettings.json",
+              "RelativeToolTip": "OnlineMedicineStore\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-13T07:06:50.363Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

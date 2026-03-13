@@ -1,0 +1,102 @@
+<div class="row justify-content-center mb-5">
+  <div class="col-xl-11">
+    <a routerLink="/home" class="btn btn-link text-decoration-none text-muted mb-4 ps-0 hover-primary">
+      <i class="bi bi-arrow-left me-2"></i> Back to Gallery
+    </a>
+
+    @if (loading()) {
+      <div class="d-flex justify-content-center py-5 my-5">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    } @else if (medicine(); as med) {
+      <div class="card premium-card border-0 overflow-hidden">
+        <div class="row g-0">
+          
+          <!-- LEFT COLUMN: Image Gallery placeholder -->
+          <div class="col-lg-6 bg-light d-flex flex-column align-items-center justify-content-center p-5 border-end border-light">
+            <i class="bi bi-capsule text-primary mb-4" style="font-size: 10rem !important; opacity: 0.8; filter: drop-shadow(0 10px 15px rgba(0,181,184,0.2));"></i>
+            <div class="d-flex gap-3 mt-4">
+              <!-- Thumbnail placeholders -->
+              <div class="bg-white rounded p-2 border border-primary shadow-sm" style="cursor:pointer"><i class="bi bi-image text-muted fs-4 px-1"></i></div>
+              <div class="bg-white rounded p-2 border border-light shadow-sm text-muted hover-opacity" style="cursor:pointer"><i class="bi bi-box text-muted fs-4 px-1"></i></div>
+              <div class="bg-white rounded p-2 border border-light shadow-sm text-muted hover-opacity" style="cursor:pointer"><i class="bi bi-info-circle text-muted fs-4 px-1"></i></div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN: Buy Box & Product Highlights -->
+          <div class="col-lg-6">
+            <div class="card-body p-5 h-100 d-flex flex-column">
+              <!-- Header / Badges -->
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-uppercase text-primary fw-bold small" style="letter-spacing: 1px;">Category #{{ med.categoryId }}</span>
+                <div class="d-flex align-items-center gap-2">
+                  <i class="bi bi-share text-muted" style="cursor:pointer"></i>
+                  <i class="bi bi-heart text-muted" style="cursor:pointer"></i>
+                </div>
+              </div>
+              
+              <h1 class="fw-bolder text-dark mb-2 display-6" style="letter-spacing: -1px;">{{ med.name }}</h1>
+              <p class="text-muted fw-semibold mb-4">By PharmaTech Industries Ltd.</p>
+              
+              <div class="d-flex align-items-end mb-4">
+                <h2 class="text-primary fw-bolder mb-0 display-4 me-3">{{ med.price | currency:'INR' }}</h2>
+                <span class="text-muted mb-2 text-decoration-line-through fs-5">{{ (med.price * 1.2) | currency:'INR' }}</span>
+              </div>
+              
+              <!-- Product Highlights -->
+              <div class="mb-5 bg-light rounded-4 p-4">
+                <h6 class="fw-bold mb-3 d-flex align-items-center"><i class="bi bi-stars text-warning me-2 fs-5"></i> Product Highlights</h6>
+                <ul class="text-muted mb-0" style="line-height: 1.8;">
+                  <li>High-quality composition tested for clinical efficacy.</li>
+                  <li>Fast acting relief specifically designed for rapid absorption.</li>
+                  <li>Manufactured in ISO-certified FDA compliant facilities.</li>
+                </ul>
+              </div>
+
+              <p class="card-text text-muted fs-6 mb-5 lh-lg flex-grow-1">
+                This is a detailed description of <strong>{{ med.name }}</strong>. It provides essential information regarding its uses, optimal dosage, and standard precautions. 
+                Always consult with a licensed healthcare professional before embarking on any medication regimen.
+              </p>
+
+              <!-- Buy Actions -->
+              <div class="mt-auto pt-4 border-top">
+                <div class="d-flex flex-wrap align-items-center justify-content-between mb-3">
+                  <div class="d-flex align-items-center gap-2">
+                    @if (med.stockQuantity > 10) {
+                      <span class="badge badge-instock rounded-pill px-3 py-2"><i class="bi bi-check-circle-fill me-1"></i> In Stock ({{ med.stockQuantity }})</span>
+                    } @else if (med.stockQuantity > 0) {
+                      <span class="badge badge-lowstock rounded-pill px-3 py-2"><i class="bi bi-exclamation-triangle-fill me-1"></i> Low Stock ({{ med.stockQuantity }})</span>
+                    } @else {
+                      <span class="badge badge-outofstock rounded-pill px-3 py-2"><i class="bi bi-x-circle-fill me-1"></i> Out of Stock</span>
+                    }
+                  </div>
+                  <span class="text-muted small"><i class="bi bi-truck me-1"></i> Ships in 24 hours</span>
+                </div>
+
+                <div class="d-grid gap-2">
+                  <button class="btn btn-lg py-3 fw-bold shadow-sm d-flex align-items-center justify-content-center" 
+                          [ngClass]="med.stockQuantity === 0 ? 'btn-secondary opacity-50' : 'btn-add-cart'"
+                          (click)="addToCart(med)" 
+                          [disabled]="med.stockQuantity === 0">
+                    <i class="bi fs-5 me-2" [ngClass]="med.stockQuantity === 0 ? 'bi-cart-x' : 'bi-cart-plus'"></i>
+                    {{ med.stockQuantity === 0 ? 'Currently Unavailable' : 'Add to Cart — ' + (med.price | currency:'INR') }}
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    } @else {
+      <div class="text-center py-5 my-5">
+        <i class="bi bi-search text-muted opacity-25" style="font-size: 5rem;"></i>
+        <h3 class="fw-bold mt-4">Medicine Not Found</h3>
+        <p class="text-muted">The pharmaceutical product you are looking for does not exist or has been removed.</p>
+        <a routerLink="/home" class="btn btn-primary mt-3 px-4 rounded-pill">Return to Gallery</a>
+      </div>
+    }
+  </div>
+</div>

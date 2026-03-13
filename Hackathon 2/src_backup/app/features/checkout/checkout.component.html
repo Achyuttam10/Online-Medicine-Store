@@ -1,0 +1,44 @@
+<div class="checkout-container">
+  <h2>Checkout</h2>
+
+  @if (cartItems().length === 0 && !submitSuccess()) {
+    <p>Your cart is empty.</p>
+  }
+
+  @if (submitSuccess()) {
+    <div class="success-message">
+      <h3>Order placed successfully!</h3>
+      <p>Thank you for your purchase.</p>
+    </div>
+  }
+
+  @if (cartItems().length > 0) {
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <ul>
+        @for (item of cartItems(); track item.Medicine.MedicineID) {
+          <li>
+            {{ item.Medicine.Name }} (x{{ item.Quantity }}) 
+            - \${{ item.Medicine.Price * item.Quantity | number:'1.2-2' }}
+          </li>
+        }
+      </ul>
+      <h4>Total: \${{ totalPrice() | number:'1.2-2' }}</h4>
+    </div>
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="placeOrder()" class="checkout-form">
+      <div>
+        <label for="shippingAddress">Shipping Address:</label>
+        <textarea id="shippingAddress" formControlName="shippingAddress" rows="3" required></textarea>
+      </div>
+
+      @if (submitError()) {
+        <p class="error">{{ submitError() }}</p>
+      }
+
+      <button type="submit" [disabled]="checkoutForm.invalid || isSubmitting()">
+        {{ isSubmitting() ? 'Placing Order...' : 'Place Order' }}
+      </button>
+    </form>
+  }
+</div>
